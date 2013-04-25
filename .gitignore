@@ -15,3 +15,7 @@ dist
 /.settings
 .DS_Store
 project/.DS_Store
+db/development.sqlite3
+db/migrate
+db/seeds.rb
+log/development.log
