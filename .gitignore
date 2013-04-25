@@ -19,3 +19,8 @@ db/development.sqlite3
 db/migrate
 db/seeds.rb
 log/development.log
+db/development.sqlite3
+db/migrate
+db/schema.rb
+db/seeds.rb
+db/test.sqlite3
