@@ -5,4 +5,8 @@ class Customer < ActiveRecord::Base
 
   validates_presence_of :email
   validates_uniqueness_of :email
+
+  def as_json(options = {})
+    attributes.except("password_digest")
+  end
 end
