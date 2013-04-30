@@ -26,3 +26,4 @@ db/seeds.rb
 db/test.sqlite3
 config/database.yml
 config/database.yml
+.rvmrc
