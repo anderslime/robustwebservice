@@ -16,13 +16,8 @@ dist
 .DS_Store
 project/.DS_Store
 db/development.sqlite3
-db/migrate
-db/seeds.rb
 log/development.log
 db/development.sqlite3
-db/migrate
-db/schema.rb
-db/seeds.rb
 db/test.sqlite3
 config/database.yml
 config/database.yml
