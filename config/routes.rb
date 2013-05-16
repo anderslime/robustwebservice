@@ -3,6 +3,7 @@ Robust::Application.routes.draw do
   # first created -> highest priority.
 
   resources :customers
+  resources :products
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
