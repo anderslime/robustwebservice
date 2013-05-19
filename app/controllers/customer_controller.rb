@@ -23,4 +23,8 @@ class CustomerController < ApplicationController
     @current_customer
   end
   helper_method :current_customer
+
+  def render_unauthorized_customer!
+    render :json => { :error => "Unauthorized customer!"}, :status => :unauthorized
+  end
 end

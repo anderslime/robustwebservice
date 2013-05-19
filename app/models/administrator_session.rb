@@ -1,7 +1,7 @@
 class AdministratorSession < ActiveRecord::Base
   attr_accessible :access_token, :administrator
 
-  belongs_to :customer
+  belongs_to :administrator
 
   before_create :generate_access_token
 
