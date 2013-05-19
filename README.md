@@ -9,7 +9,7 @@ Anders Gotfredsen (s103465)
 
 This API is a JSON api accepts therefore only JSON request. A JSON request is executed by adding ```application/json``` to the header ```Content-Type```.
 
-The host of this API is ```robust02241.herokuapp.com```.
+The host of this API is [https://robust02241.herokuapp.com](https://robust02241.herokuapp.com)
 
 ## Routes
 
