@@ -1,4 +1,4 @@
-class Admin::ProductsController < AdminController
+class Admin::ProductsController < AdministratorController
   before_filter :authenticate_administrator_with_token
 
   def index
