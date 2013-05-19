@@ -3,7 +3,7 @@ class Customer::AuthenticationsController < CustomerController
 
   def create
     session = CustomerSession.create(customer_session_params)
-    render :json => session, status: :created
+    respond_with session, :status => :created
   end
 
   def customer_session_params
