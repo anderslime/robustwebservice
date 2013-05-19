@@ -1,4 +1,4 @@
-class Customers::AuthenticationsController < ApplicationController
+class Customer::AuthenticationsController < CustomerController
   before_filter :authenticate_customer_with_http_basic
 
   def create
