@@ -2,11 +2,11 @@ Robust::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
-  resources :products
+  resources :products, :only => [:show, :index]
   resources :customers, :only => [:create]
   namespace :customer do
     post 'authentications' => 'authentications#create'
-    resources :orders
+    resources :orders, :only => [:index, :show, :create]
   end
 
   # Sample of regular route:
