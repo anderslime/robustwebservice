@@ -4,6 +4,9 @@ Robust::Application.routes.draw do
 
   resources :customers
   resources :products
+  namespace :customers do
+    post 'authentications' => 'authentications#create'
+  end
 
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
