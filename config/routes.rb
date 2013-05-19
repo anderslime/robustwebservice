@@ -3,6 +3,7 @@ Robust::Application.routes.draw do
   # first created -> highest priority.
 
   resources :products
+  resources :customers, :only => [:create]
   namespace :customer do
     post 'authentications' => 'authentications#create'
     resources :orders

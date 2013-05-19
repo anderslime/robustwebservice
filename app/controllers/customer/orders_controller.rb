@@ -2,6 +2,10 @@ class Customer::OrdersController < CustomerController
   before_filter :authenticate_customer_with_token
   respond_to :json
 
+  def index
+    render :json => Order.where(customer_id: current_customer)
+  end
+
   def create
     order = OrderService.new(order_params, current_customer).create
     if order.errors.empty?
@@ -15,6 +19,6 @@ class Customer::OrdersController < CustomerController
 
   def order_params
     params.require(:order).
-      permit(:date, :payment_info, { product_ids: [] })
+      permit(:date, :paymentinfo, { product_ids: [] })
   end
 end

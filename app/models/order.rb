@@ -3,5 +3,5 @@ class Order < ActiveRecord::Base
 
   has_many :quantities
 
-  validates_presence_of :customer, :date, :payment_info
+  validates_presence_of :customer, :date, :paymentinfo
 end
