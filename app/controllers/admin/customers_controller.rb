@@ -2,17 +2,17 @@ class Admin::CustomersController < AdministratorController
   before_filter :authenticate_administrator_with_token
 
   def index
-    render :json => Customer.all
+    respond_with Customer.all
   end
 
   def show
-    render :json => Customer.find(params[:id])
+    respond_with Customer.find(params[:id])
   end
 
   def update
     customer = Customer.find(params[:id])
     customer.update_attributes(params[:customer])
-    render :json => customer, :status => :ok
+    respond_with customer
   end
 
   def destroy
@@ -21,12 +21,6 @@ class Admin::CustomersController < AdministratorController
   end
 
   def create
-    customer = Customer.new(params[:customer])
-
-    if customer.save
-      render :json => customer
-    else
-      render :json => { :errors => customer.errors.full_messages }
-    end
+    respond_with Customer.create(params[:customer])
   end
 end

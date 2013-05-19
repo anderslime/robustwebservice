@@ -1,4 +1,4 @@
-class Admin::ProductsController < ApplicationController
+class Admin::ProductsController < AdminController
   before_filter :authenticate_administrator_with_token
 
   def index
@@ -12,7 +12,7 @@ class Admin::ProductsController < ApplicationController
   def update
     product = Product.find(params[:id])
     product.update_attributes(params[:product])
-    render :json => product, :status => :ok
+    respond_with product
   end
 
   def destroy
@@ -21,12 +21,6 @@ class Admin::ProductsController < ApplicationController
   end
 
   def create
-    product = Product.new(params[:product])
-
-    if product.save
-      render :json => product
-    else
-      render :json => { :errors => product.errors.full_messages }
-    end
+    respond_with Product.create(params[:product])
   end
 end

@@ -13,6 +13,7 @@ Robust::Application.routes.draw do
     post 'authentications' => 'authentications#create'
     resources :customers
     resources :products
+    resources :administrators
   end
 
   # Sample of regular route:
