@@ -2,6 +2,8 @@ Robust::Application.routes.draw do
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
+  root :to => "welcome#index"
+
   resources :products, :only => [:show, :index]
   resources :customers, :only => [:create]
   namespace :customer do
