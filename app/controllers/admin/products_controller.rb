@@ -2,11 +2,11 @@ class Admin::ProductsController < AdministratorController
   before_filter :authenticate_administrator_with_token
 
   def index
-    render :json => Product.all
+    respond_with Product.all
   end
 
   def show
-    render :json => Product.find(params[:id])
+    respond_with Product.find(params[:id])
   end
 
   def update
