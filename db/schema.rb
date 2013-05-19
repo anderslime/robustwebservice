@@ -11,7 +11,16 @@
 #
 # It's strongly recommended to check this file into your version control system.
 
-ActiveRecord::Schema.define(:version => 20130516092356) do
+ActiveRecord::Schema.define(:version => 20130519083105) do
+
+  create_table "customer_sessions", :force => true do |t|
+    t.string   "access_token", :null => false
+    t.integer  "customer_id",  :null => false
+    t.datetime "created_at",   :null => false
+    t.datetime "updated_at",   :null => false
+  end
+
+  add_index "customer_sessions", ["customer_id"], :name => "index_customer_sessions_on_customer_id"
 
   create_table "customers", :force => true do |t|
     t.string   "name"
