@@ -1,4 +1,6 @@
 class Admin::ProductsController < ApplicationController
+  before_filter :authenticate_administrator_with_token
+
   def index
     render :json => Product.all
   end

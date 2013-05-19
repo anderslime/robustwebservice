@@ -9,6 +9,12 @@ Robust::Application.routes.draw do
     resources :orders, :only => [:index, :show, :create]
   end
 
+  namespace :admin do
+    post 'authentications' => 'authentications#create'
+    resources :customers
+    resources :products
+  end
+
   # Sample of regular route:
   #   match 'products/:id' => 'catalog#view'
   # Keep in mind you can assign values other than :controller and :action

@@ -1,4 +1,6 @@
-class Admin::CustomersController < ApplicationController
+class Admin::CustomersController < AdministratorController
+  before_filter :authenticate_administrator_with_token
+
   def index
     render :json => Customer.all
   end
