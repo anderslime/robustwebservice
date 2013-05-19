@@ -6,14 +6,14 @@ Robust::Application.routes.draw do
   resources :customers, :only => [:create]
   namespace :customer do
     post 'authentications' => 'authentications#create'
-    resources :orders, :only => [:index, :show, :create]
+    resources :orders, :except => [:new, :edit, :update]
   end
 
   namespace :admin do
     post 'authentications' => 'authentications#create'
-    resources :customers
-    resources :products
-    resources :administrators
+    resources :customers, :except => [:new, :edit]
+    resources :products, :except => [:new, :edit]
+    resources :administrators, :except => [:new, :edit]
   end
 
   # Sample of regular route:
