@@ -18,8 +18,15 @@ class OrderService
   def quantities
     product_ids.uniq.map do |product_id|
       quantity = product_ids.count(product_id)
-      Quantity.new(quantity: quantity, product_id: product_id)
+      product = find_product_with_id(product_id)
+      Quantity.new(quantity: quantity, product: product, order: order)
     end
+  end
+
+  def find_product_with_id id
+    Product.find(id)
+  rescue
+    raise ProductNotFound.new("Product with id #{id} doesn't exist")
   end
 
   def order
@@ -32,4 +39,6 @@ class OrderService
       date: order_params_input[:date] || Time.now
     )
   end
+
+  class ProductNotFound < RuntimeError; end
 end
